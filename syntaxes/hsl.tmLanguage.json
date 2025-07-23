@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "HSL",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#numbers"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.hsl",
+          "match": "\\b(abort|break|char|const|device|debug|define|dialog|echo|else|endif|error|event|file|float|for|function|global|goto|if|ifdef|ifndef|include|lock|long|loop|method|namespace|next|object|once|onerror|pause|pragma|private|return|resume|sequence|short|static|struct|string|synchronized|timer|unlock|variable|void|while|__filename__)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.hsl",
+          "match": "\\b(hslTrue|hslFalse|hslInfinite|hslOKOnly|hslOKCancel|hslAbortRetryIgnore|hslYesNoCancel|hslYesNo|hslRetryCancel|hslDefButton1|hslDefButton2|hslDefButton3|hslError|hslQuestion|hslExclamation|hslInformation|hslOK|hslCancel|hslAbort|hslRetry|hslIgnore|hslYes|hslNo|hslInteger|hslFloat|hslString|hslRead|hslWrite|hslAppend|hslHide|hslShow|hslShowMaximized|hslShowMinimized|hslSynchronous|hslAsynchronous|hslCSVDelimited|hslTabDelimited|hslFixedLength|hslAsciiText|hslCurrent|hslFirst|hslLast|HSL_RUNTIME)\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "match": "(?<![\\w\\d.])0[xX][0-9A-Fa-f]+",
+          "name": "constant.numeric.integer.hexadecimal.hsl"
+        },
+        {
+          "match": "(?<![\\w\\d.])\\d+(\\.\\d*)?([eE]-?\\d*)?",
+          "name": "constant.numeric.float.hsl"
+        },
+        {
+          "match": "(?<![\\w\\d.])\\d+(?![eE.0-9])",
+          "name": "constant.numeric.integer.hsl"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.hsl",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "match": "\\\\[nt\\\\'\"abfrv]",
+          "name": "constant.character.escape.hsl"
+        },
+        {
+          "match": "\\\\\\d{3}",
+          "name": "constant.character.escape.byte.hsl"
+        },
+        {
+          "match": "\\\\x[0-9A-Fa-f][0-9A-Fa-f]",
+          "name": "constant.character.escape.byte.hsl"
+        },
+        {
+          "match": "\\\\.",
+          "name": "invalid.illegal.character.escape.hsl"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "begin": "\\/\\/",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.hsl"
+            }
+          },
+          "end": "\\n",
+          "name": "comment.line.double-slash.hsl"
+        },
+        {
+          "begin": "\\/\\*",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.begin.hsl"
+            }
+          },
+          "end": "\\*\\/",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.end.hsl"
+            }
+          },
+          "name": "comment.block.hsl"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.hsl"
+}

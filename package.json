@@ -1,0 +1,43 @@
+{
+  "name": "hamilton-standard-language",
+  "displayName": "Hamilton Standard Language",
+  "description": "Syntax highlighting for HSL (Hamilton Standard Language)",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.3"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "hsl",
+        "aliases": [
+          "HSL",
+          "hsl"
+        ],
+        "extensions": [
+          ".hsl",
+          ".hs_",
+          ".hsi",
+          ".sub"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "hsl",
+        "scopeName": "source.hsl",
+        "path": "./syntaxes/hsl.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "yaml": "^2.8.0"
+  },
+  "scripts": {
+    "prepare": "npx yaml --json --single --indent 2 < syntaxes/hsl.tmLanguage.yaml > syntaxes/hsl.tmLanguage.json"
+  }
+}
