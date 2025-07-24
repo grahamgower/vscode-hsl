@@ -10,6 +10,10 @@
   "categories": [
     "Programming Languages"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grahamgower/vscode-hsl.git"
+  },
   "contributes": {
     "languages": [
       {
@@ -36,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "@vscode/vsce": "^3.6.0",
     "yaml": "^2.8.0"
   },
   "scripts": {
