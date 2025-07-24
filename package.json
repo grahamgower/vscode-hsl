@@ -3,6 +3,7 @@
   "displayName": "Hamilton Standard Language",
   "description": "Syntax highlighting for HSL (Hamilton Standard Language)",
   "version": "0.0.1",
+  "license": "ISC",
   "engines": {
     "vscode": "^1.95.3"
   },
